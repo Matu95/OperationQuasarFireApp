@@ -9,6 +9,8 @@ QuasarApp es un Api Rest que provee servicios para la interpretación de mensaje
 
 Se encuentra desarrollado en .Net Core(C#) y como base de datos Sql Server. El servicio se encuentra alojado en AWS
 
+https://dlnsw1e7lc.execute-api.us-west-2.amazonaws.com/Prod
+
 La aplicacion cuenta con: 
 
 - MiddlewareException y CustomExceptions
