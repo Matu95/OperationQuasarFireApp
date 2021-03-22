@@ -7,6 +7,6 @@ namespace OperationQuasarFireApp.Models
 {
     public class TopSecretRequestModel
     {
-        public List<SatellitesModel> satellites { get; set; }
+        public List<SatelliteModel> Satellites { get; set; }
     }
 }

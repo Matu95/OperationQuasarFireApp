@@ -1,58 +1,72 @@
 using Microsoft.AspNetCore.Mvc;
+using OperationQuasarFireApp.Contexts;
+using OperationQuasarFireApp.Helpers;
 using OperationQuasarFireApp.Models;
+using OperationQuasarFireApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
 namespace OperationQuasarFireApp.Controllers
 {
-    [Route("main")]
+    [Route("/")]
     public class MainController : ControllerBase
     {
+        private readonly AppDbContext context;
+        private readonly IMainService _mainService;
+
+        public MainController(AppDbContext context,IMainService mainService)
+        {
+            this.context = context;
+            _mainService = mainService;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         [HttpPost("topsecret")]
         public IActionResult TopSecret([FromBody] TopSecretRequestModel request)
         {
-            var response = new TopSecretResponseModel();
-            var position = new PositionModel()
-            {
-                x = float.Parse("-100.0", CultureInfo.InvariantCulture.NumberFormat),
-                y = float.Parse("75.5", CultureInfo.InvariantCulture.NumberFormat)
-            };
+            Point2D position1 = new Point2D(-500, -200, 806.23);
+            Point2D position2 = new Point2D(100, -100, 282.84);
+            Point2D position3 = new Point2D(500, 100, 447.21);
 
-            response.position = position;
-            response.message = GetMessage(request.satellites.Select(x => x.message).ToList());
+            Point2D userPosition = Trilateration.getTrilateration(position1, position2, position3);
+
+            TopSecretResponseModel response = _mainService.TopSecret(request);
 
             return Ok(response);
         }
 
-        [HttpGet("topsecret_split/{satelliteName}")]
-        public IActionResult TopSecretSplitBySatelliteName([FromQuery] string satelliteName)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="satelliteName"></param>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("topsecret_split/{satelliteName}")]
+        public IActionResult TopSecretSplitBySatelliteName([FromQuery] string satelliteName, [FromBody] SatelliteModel request)
         {
-            return Ok(new TopSecretSplitResponseModel());
+            SatelliteModel satellite = _mainService.TopSecretSplitPost(satelliteName, request); 
+
+            return Ok(satellite);
         }
 
-        [HttpPost("topsecret_split")]
-        public IActionResult TopSecretSplit([FromBody] SatellitesModel satellites)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("topsecret_split")]
+        public IActionResult TopSecretSplit()
         {
-            return Ok(new TopSecretSplitResponseModel());
+            TopSecretResponseModel response = _mainService.TopSecretSplit();
+
+            return Ok(response);
         }
 
-        private string GetLocation(float distanceA, float distanceB, float distanceC)
-        {
-            return null;
-        }
-
-        private string GetMessage(List<string[]> messages)
-        {
-
-            string[] result = messages.First();
-
-            foreach (string[] message in messages)
-                for (int i = 0; i < message.Length; i++)
-                    if(!string.IsNullOrEmpty(message[i]))
-                        result[i] = message[i];
-
-            return string.Join(" ", result);
-        }
     }
+
 }
