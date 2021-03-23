@@ -7,7 +7,7 @@ namespace OperationQuasarFireApp.Models
 {
     public class TopSecretSplitResponseModel
     {
-        public float distance { get; set; }
-        public string[] message { get; set; }
+        public float Distance { get; set; }
+        public string[] Message { get; set; }
     }
 }

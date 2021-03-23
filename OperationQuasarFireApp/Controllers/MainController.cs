@@ -30,12 +30,6 @@ namespace OperationQuasarFireApp.Controllers
         [HttpPost("topsecret")]
         public IActionResult TopSecret([FromBody] TopSecretRequestModel request)
         {
-            Point2D position1 = new Point2D(-500, -200, 806.23);
-            Point2D position2 = new Point2D(100, -100, 282.84);
-            Point2D position3 = new Point2D(500, 100, 447.21);
-
-            Point2D userPosition = Trilateration.getTrilateration(position1, position2, position3);
-
             TopSecretResponseModel response = _mainService.TopSecret(request);
 
             return Ok(response);

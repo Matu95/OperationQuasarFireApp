@@ -7,8 +7,8 @@ namespace OperationQuasarFireApp.Models
 {
     public class TopSecretResponseModel
     {
-        public PositionModel position { get; set; }
-        public string message { get; set; }
+        public PositionModel Position { get; set; }
+        public string Message { get; set; }
     }
 
 }

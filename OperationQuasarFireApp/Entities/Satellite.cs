@@ -11,7 +11,7 @@ namespace OperationQuasarFireApp.Entities
         [Key]
         public int Id { get; set; }
         public string SatelliteName { get; set; }
-        public decimal Distance { get; set; }
+        public decimal? Distance { get; set; }
         public string MessageArray { get; set; }
     }
 }

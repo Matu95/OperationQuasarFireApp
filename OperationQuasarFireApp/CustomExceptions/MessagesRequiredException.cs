@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 namespace OperationQuasarFireApp.CustomExceptions
 {
     [Serializable]
-    public class MessagesRequiredException : Exception
+    public class ErrorException : Exception
     {
-        public MessagesRequiredException()
+        public ErrorException()
         {
         }
 
-        public MessagesRequiredException(string message) : base(message)
+        public ErrorException(string message) : base(message)
         {
         }
     }

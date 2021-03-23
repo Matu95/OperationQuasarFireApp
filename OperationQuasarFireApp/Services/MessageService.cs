@@ -10,21 +10,39 @@ namespace OperationQuasarFireApp.Services
     {
         public string GetMessage(List<string[]> messages)
         {
-            if (messages.Count < 3)
-                throw new MessagesRequiredException("Son necesarios al menos tres mensajes");
+            messages = messages.Where(x => x != null).ToList();
 
-            string[] result = messages.First();
+            if (messages.Count() == 0)
+                return null;
 
-            foreach (string[] message in messages)
+            string[] result = getStuctureMessage(messages);
+
+            return decryptMessage(messages, result);
+        }
+
+        private string[] getStuctureMessage(List<string[]> messages)
+        {
+            messages = messages.OrderByDescending(x => x.Length).ToList();
+
+            return messages.First();
+        }
+
+        private string decryptMessage(List<string[]> messages, string[] result)
+        {
+            try
             {
-                if (result.Length != message.Length)
-                    throw new MessageLengthNotValidException("Los mensajes deben tener el mismo tamaño");
-
-                for (int i = 0; i < message.Length; i++)
-                    if (!string.IsNullOrEmpty(message[i]))
-                        result[i] = message[i];
+                foreach (string[] message in messages)
+                {
+                    if (message != null && message.Count() > 0)
+                        for (int i = 0; i < message.Length; i++)
+                            if (!string.IsNullOrEmpty(message[i]) && !result.Contains(message[i]))
+                                result[i] = message[i];
+                }
             }
-
+            catch(Exception)
+            {
+                throw new ErrorException("Ocurrió un error al desifrar mensaje");
+            }
 
             return string.Join(" ", result);
         }
