@@ -83,9 +83,6 @@ namespace OperationQuasarFireApp.Services
             {
                 if (satellite.Distance == null)
                     throw new ErrorException("No se encontró la distancia a el satélite " + satellite.Name);
-                //if (satellite.Message == null)
-                //    throw new ErrorException("No se encontró mensaje de el satélite " + satellite.Name);
-
             }
         }
     }

@@ -23,7 +23,7 @@ namespace OperationQuasarFireApp.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Devuelve la posicion y mensaje a partir de la distancia y mensajes recibidos
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -36,7 +36,7 @@ namespace OperationQuasarFireApp.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Actualiza la posicion y mensaje que recibe un satelite en particular
         /// </summary>
         /// <param name="satelliteName"></param>
         /// <param name="request"></param>
@@ -50,7 +50,7 @@ namespace OperationQuasarFireApp.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Devuelve la pocicion y mensaje a partir de los datos enviados por el método /topsecret_split/{satelliteName}
         /// </summary>
         /// <returns></returns>
         [HttpGet("topsecret_split")]
