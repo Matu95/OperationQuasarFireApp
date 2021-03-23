@@ -26,7 +26,7 @@ Puede descargar el collection de postman desde este [ enlace](https://www.getpos
 
 | url      | descripción                       |
 |:--------------|:----------------------------------|
-| `/topsecret`      | Devuelve la posicion y mensaje a partir de la distancia y mensajes recibidos
-| `/topsecret_split/{satelliteName}`    | Actualiza la posicion y mensaje que recibe un satelite en particular
-| `/topsecret_split` | Devuelve la pocicion y mensaje a partir de los datos enviados por el método `/topsecret_split/{satelliteName}`  |
+| `/topsecret`      | Devuelve la posición y mensaje a partir de la distancia y mensajes recibidos
+| `/topsecret_split/{satelliteName}`    | Actualiza la posición y mensaje que recibe un satélite en particular
+| `/topsecret_split` | Devuelve la posición y mensaje a partir de los datos enviados por el método `/topsecret_split/{satelliteName}`  |
 
