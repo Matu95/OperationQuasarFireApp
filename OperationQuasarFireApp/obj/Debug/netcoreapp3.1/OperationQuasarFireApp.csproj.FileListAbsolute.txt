@@ -86,7 +86,6 @@ C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\Opera
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\obj\Debug\netcoreapp3.1\OperationQuasarFireApp.csprojAssemblyReference.cache
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
@@ -111,3 +110,4 @@ C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\Opera
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\matias.choquevillca\Documents\programacion\OperationQuasarFireApp\OperationQuasarFireApp\OperationQuasarFireApp\obj\Debug\netcoreapp3.1\OperationQuasarFireApp.csprojAssemblyReference.cache

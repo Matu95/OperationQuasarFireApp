@@ -26,7 +26,7 @@ namespace OperationQuasarFireApp.CustomExceptionsMiddleware
             {
                 await _next(httpContext);
             }
-            catch (MessagesRequiredException ex)
+            catch (ErrorException ex)
             {
                 await HandleExceptionAsync(httpContext, HttpStatusCode.NotFound, ex.Message);
             }

@@ -7,7 +7,7 @@ namespace OperationQuasarFireApp.Models
 {
     public class PositionModel
     {
-        public float x { get; set; }
-        public float y { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
     }
 }
