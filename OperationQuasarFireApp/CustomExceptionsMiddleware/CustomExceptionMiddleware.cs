@@ -44,7 +44,7 @@ namespace OperationQuasarFireApp.CustomExceptionsMiddleware
             }
             catch (Exception ex)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.InternalServerError, ex.Message);
+                await HandleExceptionAsync(httpContext, HttpStatusCode.InternalServerError, "Ocurrió un error");
             }
         }
 

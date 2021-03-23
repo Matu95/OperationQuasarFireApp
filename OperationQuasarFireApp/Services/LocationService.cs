@@ -17,13 +17,9 @@ namespace OperationQuasarFireApp.Services
             if (satellites.Any(x => x.Distance == null || x.Distance == 0))
                 throw new ErrorException("Es necesario enviar una distancia válida.");
 
-            double distanceToKenobi = Decimal.ToDouble((Decimal)satellites.Find(x => x.Name == "kenobi").Distance);
-            double distanceToSkywalker = Decimal.ToDouble((Decimal)satellites.Find(x => x.Name == "skywalker").Distance);
-            double distanceToSato = Decimal.ToDouble((Decimal)satellites.Find(x => x.Name == "sato").Distance);
-
-            TrilaterationModel satelliteKenobi = new TrilaterationModel(-500, -200, distanceToKenobi);
-            TrilaterationModel satelliteSkywalker = new TrilaterationModel(100, -100, distanceToSkywalker);
-            TrilaterationModel satelliteSato = new TrilaterationModel(500, 100, distanceToSato);
+            TrilaterationModel satelliteKenobi = GetTrilaterationModel("kenobi", - 500, -200, satellites);
+            TrilaterationModel satelliteSkywalker = GetTrilaterationModel("skywalker", 100, -100, satellites);
+            TrilaterationModel satelliteSato = GetTrilaterationModel("sato", 500, 100, satellites);
 
             return getPosition(satelliteKenobi, satelliteSkywalker, satelliteSato);
         } 
@@ -46,6 +42,27 @@ namespace OperationQuasarFireApp.Services
                 X = Math.Round(result.X, 2),
                 Y = Math.Round(result.Y, 2)
             };
+        }
+
+        private TrilaterationModel GetTrilaterationModel(string satelliteName, double x, double y, List<SatelliteModel> satellites)
+        {
+            TrilaterationModel satelliteKenobi = new TrilaterationModel(0,0,0);
+
+            var satellite = satellites.Find(x => x.Name == satelliteName);
+
+            if (satellite == null)
+                throw new ErrorException("No se encontró el satélites, los satélites validos son (kenobi, skywalker, sato)");
+
+            try
+            {
+                satelliteKenobi = new TrilaterationModel(x, y, Decimal.ToDouble((Decimal)satellite.Distance));
+            }
+            catch (Exception)
+            {
+                throw new ErrorException("Ocurrió un error, por favor revise los datos enviados.");
+            }
+
+            return satelliteKenobi;
         }
     }
 }

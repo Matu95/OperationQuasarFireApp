@@ -30,3 +30,60 @@ Puede descargar el collection de postman desde este [ enlace](https://www.getpos
 | `/topsecret_split/{satelliteName}`    | Actualiza la posición y mensaje que recibe un satélite en particular
 | `/topsecret_split` | Devuelve la posición y mensaje a partir de los datos enviados por el método `/topsecret_split/{satelliteName}`  |
 
+`/topsecret`
+***request***
+```json
+{
+   "satellites": [
+      {
+         "name": "",
+         "distance": ,
+         "message": []
+      }
+   ]
+}
+```
+***response***
+```json
+{
+    "position": {
+        "x": null,
+        "y": null
+    },
+    "message": null
+}
+```
+`/topsecret_split/{satelliteName}` 
+***request***
+```json
+{
+     "distance": null,
+     "message": null
+}
+```
+***response***
+```json
+{
+     "distance": null,
+     "message": null
+}
+```
+`/topsecret_split/{satelliteName}`
+***response***
+```json
+{
+    "position": {
+        "x": null,
+        "y": null
+    },
+    "message": ""
+}
+```
+
+***error***
+```json
+{
+  "messageError": "Descripción del error"
+}
+```
+

@@ -30,7 +30,7 @@ namespace OperationQuasarFireApp.Services
             var response = new TopSecretResponseModel();
          
             response.Position = _locationService.GetLocation(request.Satellites);
-            response.Message = _messageService.GetMessage(request.Satellites.Select(x => x.Message).ToList());
+            response.Message = _messageService.GetMessage(request.Satellites.Select(x => x.Message).ToList()).Trim();
 
             return response;
         }
