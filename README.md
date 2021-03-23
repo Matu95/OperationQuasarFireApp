@@ -18,7 +18,7 @@ La aplicacion cuenta con:
 - AmazonLamda
 
 ## Arquitectura
-![ScreenShot](https://raw.githubusercontent.com/Matu95/OperationQuasarFireApp/main/Documentation/diagrama.png?token=AGK6OYYBHOMMYAVUY4H62SDALC4LU)
+![ScreenShot](https://raw.githubusercontent.com/Matu95/OperationQuasarFireApp/main/Files/diagrama.png?token=AGK6OYYBHOMMYAVUY4H62SDALC4LU)
 
 ## Ejecución
 
